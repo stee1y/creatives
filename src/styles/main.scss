@@ -6,12 +6,34 @@
 
 $main_color: #11749e;
 
+
+
+
+
+
 body {
+  
   box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.title {
+  font-family: 'Gotham-Medium', sans-serif;
+  font-size: 37.5px;
+  color: #fff;
+  padding-top: 170px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 .header {
   position: fixed;
+  z-index: 999;
   left: 0;
   right: 0;
   border-bottom: 1px solid #777576;
@@ -24,12 +46,11 @@ body {
 
 .nav {
   display: flex;
+  position: relative;
   justify-content: space-between;
   height: 116px;
   align-items: center;
   color: #fff;
-
-  z-index: 11;
 
   .logo {
     display: inline-block;
@@ -53,8 +74,8 @@ body {
       left: 12px;
       width: 67px;
       height: 67px;
-      z-index: -1;
       background-color: #cccbcb;
+      z-index: -1;
     }
   }
 
@@ -106,21 +127,20 @@ body {
   }
 }
 
-.main {
-  width: 100vw;
-  height: 1080px;
+.page {
+  width: 99vw;
+  position: relative;
+  min-height: 970px;
   background-image: url('../img/main.jpg');
   background-size: cover;
-  z-index: -1;
+
   text-align: center;
 
   &__title {
     font-family: 'Gotham-Bold', sans-serif;
     font-size: 152.5px;
-    margin: 0;
     padding-top: 390px;
-    color: #fff;
-    text-transform: uppercase;
+
   }
 
   &__suptitle {
@@ -134,7 +154,7 @@ body {
   }
 
   .scroll-down {
-    margin-top: 110px;
+    margin-top: 150px;
 
     &__text {
       font-family: 'Gotham-Book', sans-serif;
@@ -154,6 +174,8 @@ body {
       outline: none;
       cursor: pointer;
       transition: ease .3s;
+
+
 
       &:hover {
         border-color: #777576;
@@ -176,6 +198,7 @@ body {
       right: 28px;
       transform: rotate(45deg);
       background-color: #fff;
+
     }
 
     &::after {
@@ -189,5 +212,318 @@ body {
       background-color: #fff;
     }
     }
+  }
+}
+
+.features {
+  width: 99vw;
+  height: 738px;
+  color: #fff;
+  background-color: $main_color;
+
+  &__icon__one {
+    background-image: url('../img/Write.png');
+  }
+
+  &__icon__two {
+    background-image: url('../img/Write.png');
+  }
+
+  &__icon__three {
+    background-image: url('../img/Search (and thou shall find).png');
+  }
+
+  &__icon__four {
+    background-image: url('../img/Simon says.png');
+  }
+
+  &__title {
+
+    position: relative;
+
+    &::before {
+      font-family: 'Gotham-Bold', sans-serif;
+      position: absolute;
+      transform: scale(.73, 1.0);
+      top: 40px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: 'W';
+      font-size: 247.2px;
+      font-weight: 700;
+      color: rgba(256,256,256, .3);
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin-top: 130px;
+    padding: 0;
+
+    &__item {
+      text-align: center;
+      list-style-type: none;
+      padding: 15px;
+    }
+
+    &__img {
+      position: relative;
+      margin: 0 auto;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background-color: rgba(256,256,256, .3);
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+
+    &__title {
+      font-family: 'Gotham-Medium', sans-serif;
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    &__text {
+      font-family: 'Gotham-Book', sans-serif;
+      font-size: 14px;
+      margin-top: 30px;
+      line-height: 22px;
+    }
+  }
+}
+
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 99vw;
+
+
+  &__block {
+    display: flex;
+    position: relative;
+    background-color: #222222;
+    color: #fff;
+    width: 100%;
+
+    margin: 0 auto;
+
+    &:nth-child(even) {
+      background-color: #f3f3f3;
+      color: #000;
+
+
+      .news__block__info {
+        padding-left: 55%;
+      }
+      .news__block__img {
+        position: absolute;
+        content: '';
+        background-image: url('../img/2_img.jpg');
+        left: 0;
+      }
+    }
+
+    &__info {
+      display: block;
+      margin-top: 80px;
+      width: 50%;
+      margin-bottom: 100px;
+      max-height: 442px;
+      overflow: hidden;
+    }
+    &__img {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      background-image: url('../img/1_img.jpg');
+      background-size: cover;
+      width: 50%;
+      height: 100%;
+
+    }
+  }
+
+
+  &__posted {
+    font-family: 'Gotham-Book', sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+
+
+    &__title {
+      font-family: 'Gotham-Medium', sans-serif;
+      font-size: 25px;
+      margin: 15px 0 0;
+      text-transform: uppercase;
+    }
+
+    &__text {
+      font-family: 'Gotham-Book', sans-serif;
+      font-size: 15px;
+      margin-top: 40px;
+      padding-right: 50px;
+      line-height: 20px;
+    }
+  }
+}
+
+.blog {
+  width: 99vw;
+  color: #222222;
+  background-color: #fff;
+
+  &__title {
+    color: #222222;
+    position: relative;
+
+    &::before {
+      font-family: 'Gotham-Bold', sans-serif;
+      position: absolute;
+      transform: scale(.73, 1.0);
+      top: 40px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: 'B';
+      font-size: 247.2px;
+      font-weight: 700;
+      color: rgba(0,0,0, .2);
+    }
+  }
+
+  &__suptitle {
+    text-align: center;
+    font-family: 'Gotham-Book', sans-serif;
+    font-size: 30px;
+    margin: 115px 0 0;
+    font-weight: 300;
+  }
+
+  &__list {
+    display: flex;
+    margin-top: 75px;
+    padding: 0 0 100px 0;
+
+    &__one{
+      background-image: url('../img/1_blog.jpg');
+    }
+
+    &__two{
+      background-image: url('../img/2_blog.jpg');
+    }
+
+    &__three{
+      background-image: url('../img/3_blog.jpg');
+    }
+
+    &__four{
+      background-image: url('../img/1_blog.jpg');
+    }
+
+    &__item {
+      text-align: center;
+      list-style-type: none;
+      padding: 15px;
+    }
+
+    &__img {
+      position: relative;
+      margin: 0 auto;
+      width: 270px;
+      height: 280px;
+      background-color: #000;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__title {
+      font-family: 'Gotham-Medium', sans-serif;
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    &__text {
+      font-family: 'Gotham-Book', sans-serif;
+      font-size: 14px;
+      margin-top: 30px;
+      line-height: 22px;
+    }
+  }
+}
+
+.block {
+  background-color: $main_color;
+  color: #fff;
+
+  &__item {
+    display: flex;
+    padding: 110px 15px;
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    font-family: 'Gotham-Book', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 0 0 0 25px;
+    max-width: 470px;
+  }
+}
+
+.additionally {
+  color: #fff;
+  width: 99vw;
+  position: relative;
+  min-height: 850px;
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
+
+
+  &__block {
+    padding: 225px 15px;
+    width: 50%;
+    
+    &:last-child {
+      background-position: center center;
+      background-image: url('../img/phone.png');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title {
+    font-family: 'Gotham-Medium', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  &__text {
+    font-family: 'Gotham-Book', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 40px 90px 60px 0;
+  }
+
+  &__feature {
+    width: 370px;
+    font-family: 'Gotham-Medium', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 8px 19px;
+    background-color: $main_color;
+    margin: 25px 0;
   }
 }
