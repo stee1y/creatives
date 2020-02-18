@@ -18,4 +18,15 @@ import blog_3 from './img/3_blog.jpg'
 import img_1 from './img/1_img.jpg'
 import img_2 from './img/2_img.jpg'
 
+let menu = document.querySelector('.nav__menu')
+let toggle = document.querySelector('.nav__toggle')
+toggle.addEventListener('click', ()=>{menu.classList.toggle('active'); toggle.classList.toggle('toggle-close')})
+
+
+
+
+
+
+console.log(toggle)
+
 
