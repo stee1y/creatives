@@ -18,15 +18,34 @@ import blog_3 from './img/3_blog.jpg'
 import img_1 from './img/1_img.jpg'
 import img_2 from './img/2_img.jpg'
 
-let menu = document.querySelector('.nav__menu')
-let toggle = document.querySelector('.nav__toggle')
-toggle.addEventListener('click', ()=>{menu.classList.toggle('active'); toggle.classList.toggle('toggle-close')})
+const menu = document.querySelector('.nav__menu')
+const toggle = document.querySelector('.nav__toggle')
+
+const menuToggle = function () {
+  menu.classList.toggle('active')
+  toggle.classList.toggle('toggle-close')
+}
+
+toggle.addEventListener('click', menuToggle)
 
 
+let links = document.querySelectorAll('a[href*="#"]')
 
+for(let link of links) {
+  link.addEventListener('click', (e)=> {
+    e.preventDefault();
 
+    const idLink = link.getAttribute('href')
 
+    for(let key of menu.classList) {
+      if (key === 'active') {
+        menuToggle()
+      }
+    }
 
-console.log(toggle)
-
-
+    document.querySelector(''+idLink).scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+  })
+}

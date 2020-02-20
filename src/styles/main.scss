@@ -163,8 +163,9 @@ body {
     }
 
     &__btn {
+      display: block;
       position: relative;
-      margin-top: 20px;
+      margin: 20px auto;
       width: 65px;
       height: 65px;
       border-radius: 50%;
